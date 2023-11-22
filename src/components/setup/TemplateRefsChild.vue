@@ -1,22 +1,22 @@
 <template>
-	<div>
-		{{ $parent }}
-		<ul>
-			<li v-for="fruit in $parent.fruits" :key="fruit">{{ fruit }}</li>
-		</ul>
-	</div>
+  <div>
+    {{ $parent }}
+    <ul>
+      <li v-for="fruit in $parent.fruits" :key="fruit">{{ fruit }}</li>
+    </ul>
+  </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
-const message = ref('Hello ~!');
+const message = ref("Hello ~!");
 const sayHello = () => {
-	alert(message.value);
+  alert(message.value);
 };
 defineExpose({
-	message,
-	sayHello,
+  message,
+  sayHello,
 });
 </script>
 

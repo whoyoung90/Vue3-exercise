@@ -1,26 +1,26 @@
 <template>
-	<div></div>
+  <div></div>
 </template>
 
 <script>
-import { ref, watch } from 'vue';
+import { ref, watch } from "vue";
 
 export default {
-	setup() {
-		const message = ref('');
+  setup() {
+    const message = ref("");
 
-		watch(message, (newValue, oldValue) => {
-			// DOM~
+    watch(message, (newValue, oldValue) => {
+      // DOM~
 
-			// API~
-			// state 변경
-			console.log('newValue: ', newValue);
-			console.log('oldValue: ', oldValue);
-		});
-		return {
-			message,
-		};
-	},
+      // API~
+      // state 변경
+      console.log("newValue: ", newValue);
+      console.log("oldValue: ", oldValue);
+    });
+    return {
+      message,
+    };
+  },
 };
 </script>
 
