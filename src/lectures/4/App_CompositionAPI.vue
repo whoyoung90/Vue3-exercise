@@ -15,23 +15,25 @@ import { isRef, onBeforeMount, onMounted, ref } from "vue";
 export default {
   setup() {
     console.log("setup()");
+    /* ref(): 반응형 상태 */
     const reactiveMessage = ref("Hello Reactive Message");
     const addReactiveMesssage = () => {
       reactiveMessage.value = reactiveMessage.value + "!";
     };
-    console.log("isRef(reactiveMessage): ", isRef(reactiveMessage));
+    /* isRef(): 반응형 데이터인지 검사하는 API */
+    console.log("isRef(reactiveMessage): ", isRef(reactiveMessage)); // true
 
     let normalMessage = "Hello Normal Message";
     const addNormalMesssage = () => {
       normalMessage = normalMessage + "!";
     };
-    console.log("isRef(normalMessage): ", isRef(normalMessage));
+    console.log("isRef(normalMessage): ", isRef(normalMessage)); // false
 
-    onMounted(() => {
-      console.log("onMounted");
-    });
     onBeforeMount(() => {
       console.log("onBeforeMount");
+    });
+    onMounted(() => {
+      console.log("onMounted");
     });
 
     return {
