@@ -10,6 +10,13 @@ import { reactive } from "vue";
 
 export default {
   setup() {
+    /**
+     * @description reactive()
+     * 객체나 배열과 같은 "reference 타입"의 반응형 객체를 선언하는 함수
+     *
+     * primitive 타입은 반응형으로 만들수 없다. reactive("Hello Vue")
+     * 그래서 반응형 API에서는 primitive 타입을 선언할 수 있는 ref 함수를 제공!!
+     */
     const state = reactive({
       count: 0,
       deep: {

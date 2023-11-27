@@ -38,7 +38,7 @@ export default {
     const attrs = ref({
       type: "text",
       value: "12345678",
-      disalbed: false,
+      disabled: false,
     });
 
     return {
