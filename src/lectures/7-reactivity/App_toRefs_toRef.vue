@@ -9,6 +9,10 @@
 import { reactive, toRef, toRefs } from "vue";
 
 export default {
+  /**
+   * @description toRef, toRefs
+   * 반응형을 잃지 않으면서 구조 분해 할당
+   */
   setup() {
     const book = reactive({
       author: "Vue Team",
@@ -18,9 +22,9 @@ export default {
       price: "무료",
     });
 
-    // const { author, title } = toRefs(book);
-    const author = toRef(book, "author");
-    const title = toRef(book, "title");
+    const { author, title } = toRefs(book);
+    // const author = toRef(book, "author");
+    // const title = toRef(book, "title");
 
     return { author, title, book };
   },

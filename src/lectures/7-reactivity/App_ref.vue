@@ -12,8 +12,9 @@ export default {
   setup() {
     /**
      * @description ref()
-     * reactive() 함수는 객체타입에만 동작.
-     * ref() 함수로 primitive 타입(number, string, boolean)을 반응형으로 만들 수 있다!
+     * @returns { mutable object } value라는 단 하나의 속성 포함
+     *
+     * ref() 함수로 primitive 타입(number, string, boolean)에 반응형 데이터를 만들 수 있다!
      */
     let message = ref("Hello Vue!");
 
@@ -24,7 +25,8 @@ export default {
     console.log("message: ", message.value);
     console.log("message typeof: ", typeof message.value);
 
-    // ref로 리턴된 반응형 객체는 내부적으로 unwrapping 되므로 "템플릿에서 value를 빼줘도 된다"
+    // ref로 리턴된 반응형 객체를 템플릿에서 사용할 때는 자동으로 내부 값(value)을 풀어내기(Unwarpping) 때문에
+    // .value를 추가할 필요없이 사용 가능!
     return {
       message,
       addMessage,
