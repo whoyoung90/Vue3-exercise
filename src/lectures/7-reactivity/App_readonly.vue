@@ -13,13 +13,11 @@ export default {
     });
     const copy = readonly(original);
 
-    // 원본은 변경 가능
-    original.count++;
-    // readonly로 생성된 복사본은 변경 불가
-    copy.count++;
+    original.count++; // 원본은 변경 가능
+    copy.count++; // readonly로 생성된 복사본은 변경 불가
 
     console.log(original.count); // 1
-    console.log(copy.count); // 여전히 1
+    console.log(copy.count); // 1 target is readonly
     return {};
   },
 };

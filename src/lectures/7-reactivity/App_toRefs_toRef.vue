@@ -12,6 +12,7 @@ export default {
   /**
    * @description toRef, toRefs
    * 반응형을 잃지 않으면서 구조 분해 할당
+   * (-> 반응형 객체에서 그대로 구조 분해 할당시, 반응형을 잃게 되므로!)
    */
   setup() {
     const book = reactive({
@@ -21,6 +22,8 @@ export default {
       description: "당신은 지금 바로 이 책을 읽습니다  ;)",
       price: "무료",
     });
+
+    // const { author, title } = book; // 반응형을 잃어버린 string..
 
     const { author, title } = toRefs(book);
     // const author = toRef(book, "author");

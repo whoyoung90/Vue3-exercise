@@ -12,7 +12,7 @@ export default {
   setup() {
     /**
      * @description ref()
-     * @returns { mutable object } value라는 단 하나의 속성 포함
+     * @returns { mutable object } .value라는 단 하나의 속성 포함
      *
      * ref() 함수로 primitive 타입(number, string, boolean)에 반응형 데이터를 만들 수 있다!
      */
