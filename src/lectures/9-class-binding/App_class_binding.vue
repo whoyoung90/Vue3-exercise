@@ -6,7 +6,7 @@
     >
       텍스트 입니다.
     </div>
-    <button v-on:click="toggle">toggle</button>
+    <button v-on:click="handleIsActive">toggle</button>
     <button v-on:click="hasError = !hasError">toggleError</button>
   </div>
 </template>
@@ -24,7 +24,6 @@ export default {
     // 	active: true,
     // 	'text-danger': true,
     // });
-
     const classObject = computed(() => {
       return {
         active: true && true,
@@ -33,13 +32,21 @@ export default {
       };
     });
 
+    const handleIsActive = () => {
+      isActive.value = !isActive.value;
+    };
+
     const activeClass = ref("active");
     const errorClass = ref("error");
 
-    const toggle = () => {
-      isActive.value = !isActive.value;
+    return {
+      isActive,
+      handleIsActive,
+      hasError,
+      classObject,
+      activeClass,
+      errorClass,
     };
-    return { isActive, toggle, hasError, classObject, activeClass, errorClass };
   },
 };
 </script>
