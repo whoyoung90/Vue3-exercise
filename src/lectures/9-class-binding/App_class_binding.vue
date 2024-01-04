@@ -24,6 +24,8 @@ export default {
     // 	active: true,
     // 	'text-danger': true,
     // });
+
+    // 해당 className 상태에 여러 조건이 필요하다면 computed를 활용할 수 있다!
     const classObject = computed(() => {
       return {
         active: true && true,

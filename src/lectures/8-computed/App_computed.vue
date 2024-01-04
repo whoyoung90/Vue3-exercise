@@ -2,7 +2,7 @@
   <div>
     <h2>{{ teacher.name }}</h2>
     <h3>강의가 있습니까?</h3>
-    <!-- <p>{{ teacher.lectures.length > 0 ? '있음 🙂' : '없음 🥲' }}</p> -->
+    <!-- <p>{{ teacher.lectures.length > 0 ? "있음 🙂" : "없음 🥲" }}</p> -->
     <p>{{ hasLecture }}</p>
     <p>{{ hasLecture }}</p>
     <p>{{ existLecture() }}</p>

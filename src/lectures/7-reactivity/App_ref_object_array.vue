@@ -19,7 +19,7 @@ export default {
     count.value++;
     console.log(count.value); // 2
     console.log("state.count: ", state.count); // 2
-    console.log("state.count: ", state.count.value); // undefined
+    console.log("state.count: ", state.count.value); // undefined..
 
     /**
      * @description ref -> Array
@@ -28,7 +28,7 @@ export default {
     const message = ref("Hello");
     const arr = reactive([message]);
     console.log(message.value); // "Hello"
-    console.log("arr[0]: ", arr[0]); // RefImpl
+    console.log("arr[0]: ", arr[0]); // RefImpl..
     console.log("arr[0]: ", arr[0].value); // "Hello"
     return {};
   },
