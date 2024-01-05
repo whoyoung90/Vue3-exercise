@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div v-memo="[views, likes]">
+    <!-- 반응형 데이터 subscribers가 변경되어야 views, likes까지 한꺼번에 변경 -->
+    <div v-memo="[subscribers]">
       <p>subscribers: {{ subscribers }}</p>
       <p>views: {{ views }}</p>
       <p>likes: {{ likes }}</p>

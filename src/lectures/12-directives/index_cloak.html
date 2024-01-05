@@ -8,7 +8,7 @@
     <title>Vite App</title>
     <style>
       [v-cloak] {
-        display: none
+        display: none;
       }
     </style>
   </head>
@@ -20,13 +20,18 @@
       const App = {
         data() {
           return {
-            message: '안녕하세요'
-          }
-        }
-      }
+            message: "안녕하세요",
+          };
+        },
+      };
+      /**
+       * 3초 이후 렌더링 된다고 가정할 때
+       * v-cloak를 사용하면 렌더링 이전에 {{ message }}를 보이지 않게 할 수 있다!
+       * loading bar에도 활용 가능!
+       */
       setTimeout(() => {
-        Vue.createApp(App).mount('#app')
-      }, 3000)
+        Vue.createApp(App).mount("#app");
+      }, 3000);
     </script>
   </body>
 </html>
