@@ -1,22 +1,28 @@
 <template>
   <div>
-    <h2>input value</h2>
+    <h2>v-model modifiers</h2>
     <!-- <input type="text" v-model.lazy="inputValue" /> -->
     <!-- <input type="text" v-model.number="inputValue" /> -->
-    <input type="text" v-model.trim="inputValue" />
+    <!-- <input type="text" v-model.trim="inputValue" /> -->
 
-    <!-- :value="inputValue"
-			@input="event => (inputValue = event.target.value)" -->
+    <h2>1. input value</h2>
+    <input type="text" v-model="inputValue" />
+    <!-- <input
+      type="text"
+      :value="inputValue"
+      @input="(event) => (inputValue = event.target.value)"
+    /> -->
     <div>{{ inputValue }}</div>
-    <div>{{ typeof inputValue }}</div>
 
-    <h2>textarea value</h2>
+    <h2>2. textarea value</h2>
     <textarea v-model="textareaValue"></textarea>
-    <!-- :value="textareaValue"
-			@input="event => (textareaValue = event.target.value)" -->
+    <!-- <textarea
+      :value="textareaValue"
+      @input="(event) => (textareaValue = event.target.value)"
+    ></textarea> -->
     <div>{{ textareaValue }}</div>
 
-    <h2>checkbox value</h2>
+    <h2>3. checkbox value</h2>
     <label for="checkbox">{{ checkboxValue }}</label>
     <input
       type="checkbox"
@@ -25,7 +31,13 @@
       true-value="Yes"
       false-value="No"
     />
-    <h3>checkbox values</h3>
+    <!-- <input
+      type="checkbox"
+      id="checkbox"
+      :checked="checkboxValue"
+      @change="(event) => (checkboxValue = event.target.checked)"
+    /> -->
+    <h3>3-1. checkbox values</h3>
     <label>
       <input type="checkbox" value="html" v-model="checkboxValues" />
       HTML
@@ -39,30 +51,40 @@
       JavaScript
     </label>
     <div>{{ checkboxValues }}</div>
-    <!-- :checked="checkboxValue"
-			@change="event => (checkboxValue = event.target.checked)" -->
 
-    <h2>radio value</h2>
+    <h2>4. radio value</h2>
     <label>
       <input type="radio" name="type" value="O" v-model="radioValue" />
-      <!-- :checked="radioValue === 'O'"
-				@change="event => (radioValue = event.target.value)" -->
+      <!-- <input
+        type="radio"
+        name="type"
+        value="O"
+        :checked="radioValue === 'O'"
+        @change="(event) => (radioValue = event.target.value)"
+      /> -->
       O형
     </label>
     <label>
       <input type="radio" name="type" value="A" v-model="radioValue" />
-      <!-- :checked="radioValue === 'A'"
-				@change="event => (radioValue = event.target.value)" -->
+      <!-- <input
+        type="radio"
+        name="type"
+        value="A"
+        :checked="radioValue === 'A'"
+        @change="(event) => (radioValue = event.target.value)"
+      /> -->
       A형
     </label>
     <div>
       {{ radioValue }}
     </div>
 
-    <h2>select value</h2>
-    <!-- :value="selectValue"
-			@change="event => (selectValue = event.target.value)" -->
+    <h2>5. select value</h2>
     <select v-model="selectValue">
+      <!-- <select
+      :value="selectValue"
+			@change="event => (selectValue = event.target.value)"
+    > -->
       <option value="html">HTML 수업</option>
       <option value="css">CSS 수업</option>
       <option value="javascript">JavaScript 수업</option>
