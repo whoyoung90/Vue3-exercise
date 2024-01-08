@@ -18,7 +18,7 @@ export default {
       reverseMessage.value = message.value.split("").reverse().join("");
     };
     watch(message, reverseFunction);
-    reverseFunction();
+    reverseFunction(); // 세번째 인자에 { immediate: true }와 동일한 기능!
     return { message, reverseMessage };
   },
 };
