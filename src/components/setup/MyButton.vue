@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  inheritAttrs: false,
+  inheritAttrs: false, // script setup에서 지원하지 않는 속성을 사용할 경우
 };
 </script>
 <script setup>

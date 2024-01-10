@@ -47,14 +47,11 @@ const child = ref(null);
 defineExpose({
   msg,
 });
+// script setup에서는 async 선언없이 await을 Top Level에서 사용할 수 있다!
 const response = await axios(
   "https://dummy.restapiexample.com/api/v1/employees"
 );
 console.log("response: ", response);
-// async function callApi() {
-// 	const response = await axios('https://dummy.restapiexample.com/api/v1/employees')
-// }
-// callApi();
 </script>
 
 <style lang="scss" scoped></style>

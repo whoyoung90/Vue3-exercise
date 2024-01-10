@@ -3,8 +3,9 @@ require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.exports = {
   root: true,
+  // Parsing error with Top Level await (eslint v8)
   parserOptions: {
-    ecmaVersion: "2022",
+    ecmaVersion: "latest",
     sourceType: "module",
   },
   extends: [
@@ -13,7 +14,7 @@ module.exports = {
     "@vue/eslint-config-prettier",
   ],
   env: {
-    "vue/setup-compiler-macros": true,
+    "vue/setup-compiler-macros": true, // 매크로 함수(defineProps, defineEmits, defineExpose)를 사용할 수 있게 해줌
   },
   rules: {
     "no-console": "off",

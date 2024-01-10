@@ -2,7 +2,7 @@
   <div class="container py-4">
     <div class="row g-3">
       <div v-for="post in posts" :key="post.id" class="col col-4">
-        <AppCards
+        <PostItem
           :title="post.title"
           :contents="post.contents"
           :type="post.type"
@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import AppCards from "./AppCards.vue";
+import PostItem from "./PostItem.vue";
 import { reactive } from "vue";
 
 export default {
   components: {
-    AppCards,
+    PostItem,
   },
   setup() {
     const posts = reactive([
