@@ -1,6 +1,5 @@
 <template>
   <div class="row g-3">
-    <!-- @click="$emit('createPost', 1, 2, 3, '김길동')" -->
     <div class="col col-2">
       <select
         v-model="type"
@@ -16,6 +15,7 @@
     </div>
     <div class="col col-2 d-grid">
       <button class="btn btn-primary" @click="createPost">추가</button>
+      <!-- @click="$emit('createPost', 1, 2, 3, '김우영')" -->
     </div>
   </div>
 </template>
@@ -24,30 +24,37 @@
 import { ref } from "vue";
 
 export default {
-  // emits: ['createPost'],
+  // emits: ["createPost"],
   emits: {
+    // 유효성 검사가 있는 이벤트 선언 (유효성 체크에 걸려도 이벤트는 발생한다!)
     createPost: (newPost) => {
       if (!newPost.type) {
         return false;
       } else if (!newPost.title) {
-        return false;
+        return false; // [Vue warn]: Invalid event arguments: event validation failed for event
       }
       return true;
     },
   },
+
   setup(props, { emit }) {
     // context.emit
     const type = ref("news");
     const title = ref("");
+    const contents = ref("");
+
     const createPost = () => {
       const newPost = {
         type: type.value,
         title: title.value,
+        contents: title.value,
       };
       emit("createPost", newPost);
       type.value = "news";
       title.value = "";
+      contents.value = "";
     };
+
     return { createPost, type, title };
   },
 };

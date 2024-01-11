@@ -11,13 +11,42 @@
         />
       </div>
     </div>
+
+    <hr class="my-4" />
+    <CustomEmit @createPost="createPost"></CustomEmit>
+
+    <hr class="my-4" />
+    <!-- 동일 컴포넌트 v-model -->
+    <!-- <label>
+      이름
+      <input
+        :value="username"
+        @input="(event) => (username = event.target.value)"
+        type="text"
+      />
+    </label>
+    <label>
+      이름
+      <input v-model="username" type="text" />
+    </label> -->
+
+    <!-- 사용자정의 컴포넌트 v-model (emit 사용) -->
+    <CustomVmodel
+      :model-value="username"
+      @update:model-value="(value) => (username = value)"
+      label="이름"
+    ></CustomVmodel>
+    <!-- <CustomVmodel v-model="username" label="이름"></CustomVmodel> -->
   </div>
 </template>
 
 <script setup>
+import { reactive, ref } from "vue";
 import PostItem from "./PostItem.vue";
-import { reactive } from "vue";
+import CustomEmit from "@/components/CustomEmit.vue";
+import CustomVmodel from "@/components/CustomVmodel.vue";
 
+const username = ref("");
 const posts = reactive([
   { id: 1, title: "제목1", contents: "내용1", isLike: true, type: "news" },
   { id: 2, title: "제목2", contents: "내용2", isLike: true, type: "news" },
@@ -38,6 +67,10 @@ const posts = reactive([
     type: "notice",
   },
 ]);
+
+const createPost = (newPost) => {
+  posts.push(newPost);
+};
 </script>
 
 <style lang="scss" scoped></style>

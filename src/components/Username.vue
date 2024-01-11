@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import LabelInput from "./LabelInput.vue";
+import LabelInput from "./CustomVmodel.vue";
 
 export default {
   props: ["firstname", "lastname"],

@@ -36,7 +36,7 @@
 
 <script>
 import MyButton from "./MyButton.vue";
-import LabelInput from "./LabelInput.vue";
+import LabelInput from "./CustomVmodel.vue";
 import FancyButton from "./FancyButton.vue";
 import AppCard from "@/components/AppCard.vue";
 import { ref } from "vue";
