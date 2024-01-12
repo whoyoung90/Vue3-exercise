@@ -1,26 +1,27 @@
 <template>
   <div>
-    <LabelInput
+    <CustomVmodel
       :model-value="firstname"
       @update:model-value="(value) => $emit('update:firstname', value)"
       label="성"
-    ></LabelInput>
-    <LabelInput
+    ></CustomVmodel>
+    <CustomVmodel
       :model-value="lastname"
       @update:model-value="(value) => $emit('update:lastname', value)"
       label="이름"
-    ></LabelInput>
+    ></CustomVmodel>
   </div>
 </template>
 
 <script>
-import LabelInput from "./CustomVmodel.vue";
+import CustomVmodel from "./CustomVmodel.vue";
 
 export default {
+  // 다중 바인딩: 전달인자를 활용해서 두개의 v-model을 전달
   props: ["firstname", "lastname"],
   emits: ["update:firstname", "update:lastname"],
   components: {
-    LabelInput,
+    CustomVmodel,
   },
   setup() {
     return {};

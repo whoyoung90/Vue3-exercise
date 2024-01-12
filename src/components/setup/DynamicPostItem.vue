@@ -37,6 +37,17 @@
       label="이름"
     ></CustomVmodel>
     <!-- <CustomVmodel v-model="username" label="이름"></CustomVmodel> -->
+    <CustomVmodelTitle
+      v-model:title="username"
+      label="제목"
+    ></CustomVmodelTitle>
+
+    <!-- 다중 바인딩 -->
+    <hr class="my-4" />
+    <Username
+      v-model:firstname="firstname"
+      v-model:lastname="lastname"
+    ></Username>
   </div>
 </template>
 
@@ -45,6 +56,8 @@ import { reactive, ref } from "vue";
 import PostItem from "./PostItem.vue";
 import CustomEmit from "@/components/CustomEmit.vue";
 import CustomVmodel from "@/components/CustomVmodel.vue";
+import CustomVmodelTitle from "@/components/CustomVmodelTitle.vue";
+import Username from "@/components/Username.vue";
 
 const username = ref("");
 const posts = reactive([
@@ -67,6 +80,9 @@ const posts = reactive([
     type: "notice",
   },
 ]);
+
+const firstname = ref("");
+const lastname = ref("");
 
 const createPost = (newPost) => {
   posts.push(newPost);
