@@ -48,6 +48,13 @@
       v-model:firstname="firstname"
       v-model:lastname="lastname"
     ></Username>
+
+    <!-- NonProp 속성 -->
+    <CustomNonProp
+      class="parent-attrs"
+      id="parent-attrs"
+      @click="sayHello"
+    ></CustomNonProp>
   </div>
 </template>
 
@@ -57,6 +64,7 @@ import PostItem from "./PostItem.vue";
 import CustomEmit from "@/components/CustomEmit.vue";
 import CustomVmodel from "@/components/CustomVmodel.vue";
 import CustomVmodelTitle from "@/components/CustomVmodelTitle.vue";
+import CustomNonProp from "../CustomNonProp.vue";
 import Username from "@/components/Username.vue";
 
 const username = ref("");
@@ -86,6 +94,9 @@ const lastname = ref("");
 
 const createPost = (newPost) => {
   posts.push(newPost);
+};
+const sayHello = () => {
+  alert("안녕하세요");
 };
 </script>
 

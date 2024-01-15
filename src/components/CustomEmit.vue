@@ -14,7 +14,7 @@
       <input v-model="title" type="text" class="form-control" />
     </div>
     <div class="col col-2 d-grid">
-      <button class="btn btn-primary" @click="createPost">추가</button>
+      <button class="btn btn-primary" @click="addPost">추가</button>
       <!-- @click="$emit('createPost', 1, 2, 3, '김우영')" -->
     </div>
   </div>
@@ -43,7 +43,7 @@ export default {
     const title = ref("");
     const contents = ref("");
 
-    const createPost = () => {
+    const addPost = () => {
       const newPost = {
         type: type.value,
         title: title.value,
@@ -55,7 +55,7 @@ export default {
       contents.value = "";
     };
 
-    return { createPost, type, title };
+    return { addPost, type, title };
   },
 };
 </script>
