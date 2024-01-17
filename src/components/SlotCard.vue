@@ -1,14 +1,20 @@
 <template>
   <div class="card">
     <div v-if="$slots.header" class="card-header">
-      <slot name="header" header-message="헤더 메시지"></slot>
+      <slot name="header" header-message="헤더 메시지">
+        #Fallback Content1
+      </slot>
     </div>
-    <!-- {{$slots}} -->
     <div v-if="$slots.default" class="card-body">
-      <slot :child-message="childMessage" hello-message="안녕하세요!"></slot>
+      <!-- name이 없으면 자동으로 default를 받는다 -->
+      <slot :child-message="childMessage" hello-message="안녕하세요!">
+        #Fallback Content2
+      </slot>
     </div>
     <div v-if="hasFooter" class="card-footer text-muted">
-      <slot name="footer" footer-message="푸터 메시지"></slot>
+      <slot name="footer" footer-message="푸터 메시지">
+        #Fallback Content3
+      </slot>
     </div>
   </div>
 </template>
@@ -27,4 +33,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.card {
+  margin: 1rem 0;
+}
+</style>

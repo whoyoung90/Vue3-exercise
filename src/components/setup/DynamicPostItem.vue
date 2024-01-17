@@ -55,6 +55,43 @@
       id="parent-attrs"
       @click="sayHello"
     ></CustomNonProp>
+
+    <!-- Slot -->
+    <SlotButton>
+      <template v-slot="{ fancyMessage }">
+        Slot Click😆
+        <br />
+        {{ fancyMessage }}
+      </template>
+    </SlotButton>
+    <SlotCard>
+      <!-- <template #[slotArgs]> 제목입니다 </template> -->
+      <!-- <template v-slot:default> 내용입니다 </template> -->
+      <!-- <template v-slot> 내용입니다 </template> -->
+      <!-- 암시적으로 Default 슬롯입니다 -->
+      <!-- <template v-slot:footer> 푸터입니다 </template> -->
+
+      <template v-slot:header="{ headerMessage }">
+        제목입니다
+        <br />
+        {{ headerMessage }}
+      </template>
+      <template #default="{ childMessage, helloMessage }">
+        내용입니다.
+        <br />
+        {{ childMessage }}
+        <br />
+        {{ helloMessage }}
+      </template>
+      <template v-slot:footer="{ footerMessage }">
+        푸터입니다
+        <br />
+        {{ footerMessage }}
+      </template>
+    </SlotCard>
+
+    <!-- Slot에서 특정 부분만 사용시 v-if="$slot." -->
+    <SlotCard> 디플트만 보여줍니다. </SlotCard>
   </div>
 </template>
 
@@ -66,6 +103,8 @@ import CustomVmodel from "@/components/CustomVmodel.vue";
 import CustomVmodelTitle from "@/components/CustomVmodelTitle.vue";
 import CustomNonProp from "../CustomNonProp.vue";
 import Username from "@/components/Username.vue";
+import SlotButton from "@/components/SlotButton.vue";
+import SlotCard from "@/components/SlotCard.vue";
 
 const username = ref("");
 const posts = reactive([
@@ -91,6 +130,8 @@ const posts = reactive([
 
 const firstname = ref("");
 const lastname = ref("");
+// Dynamic Slot
+const slotArgs = ref("header");
 
 const createPost = (newPost) => {
   posts.push(newPost);

@@ -1,6 +1,8 @@
 <template>
   <button class="fancy-btn">
-    <slot :fancy-message="fancyMessage"><span>!!</span>Default Click!!</slot>
+    <slot :fancy-message="fancyMessage">
+      <span>Default Click!!</span>
+    </slot>
   </button>
 </template>
 
@@ -17,11 +19,11 @@ export default {
 
 <style scoped>
 .fancy-btn {
+  margin: 1rem 0;
+  padding: 5px 12px;
   color: #fff;
   background: linear-gradient(315deg, #42d392 25%, #647eff);
   border: none;
-  padding: 5px 12px;
-  margin: 5px;
   border-radius: 8px;
   cursor: pointer;
 }
