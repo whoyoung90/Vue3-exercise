@@ -57,6 +57,7 @@
     ></CustomNonProp>
 
     <!-- Slot -->
+    <SlotButton></SlotButton>
     <SlotButton>
       <template v-slot="{ fancyMessage }">
         Slot Click😆
@@ -92,6 +93,9 @@
 
     <!-- Slot에서 특정 부분만 사용시 v-if="$slot." -->
     <SlotCard> 디플트만 보여줍니다. </SlotCard>
+
+    <!-- Provide Inject -->
+    <ProvideInject></ProvideInject>
   </div>
 </template>
 
@@ -105,6 +109,7 @@ import CustomNonProp from "../CustomNonProp.vue";
 import Username from "@/components/Username.vue";
 import SlotButton from "@/components/SlotButton.vue";
 import SlotCard from "@/components/SlotCard.vue";
+import ProvideInject from "../ProvideInject.vue";
 
 const username = ref("");
 const posts = reactive([

@@ -5,7 +5,7 @@
       <div class="card-body">
         <button @click="count++">Click</button>
         <p>appMessage: {{ appMessage }}</p>
-        <Child></Child>
+        <ProvideChild></ProvideChild>
       </div>
     </div>
   </div>
@@ -13,10 +13,11 @@
 
 <script>
 import { inject, provide, readonly, ref } from "vue";
-import Child from "./Child.vue";
+import ProvideChild from "./ProvideChild.vue";
+
 export default {
   components: {
-    Child,
+    ProvideChild,
   },
   setup() {
     const staticMessage = "static message";
@@ -25,18 +26,21 @@ export default {
       message.value = message.value + appendMessage;
     };
     const count = ref(10);
-    // provide('static-message', staticMessage);
 
+    // provide("static-message", staticMessage);
     provide("message", { message: readonly(message), updateMessage });
     provide("count", count);
-    const msg = inject("msg");
-    console.log("msg: ", msg);
 
+    /* App-level Provide */
     const appMessage = inject("app-message");
+    const msg = inject("msg");
+    console.log("(Vue3) msg: ", msg);
+
     return { count, appMessage };
   },
   mounted() {
-    console.log("this.msg: ", this.msg);
+    /* globalProperties(Vue2) */
+    console.log("(Vue2) this.msg: ", this.msg);
   },
 };
 </script>

@@ -19,7 +19,7 @@ export default {
 
 <style scoped>
 .fancy-btn {
-  margin: 1rem 0;
+  margin: 1rem 1rem 0 0;
   padding: 5px 12px;
   color: #fff;
   background: linear-gradient(315deg, #42d392 25%, #647eff);
