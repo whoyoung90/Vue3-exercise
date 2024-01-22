@@ -3,6 +3,7 @@
     <DynamicComponent />
     <DynamicPostItem />
     <LifecycleHooks />
+    <!-- <TemplateRefs /> -->
   </main>
 </template>
 
@@ -10,7 +11,7 @@
 import DynamicComponent from "./DynamicComponent.vue";
 import DynamicPostItem from "@/components/setup/DynamicPostItem.vue";
 import LifecycleHooks from "./LifecycleHooks.vue";
-// import DynamicPostItem from "./DynamicPostItem.vue";
+// import TemplateRefs from "./TemplateRefs.vue";
 </script>
 
 <style lang="scss" scoped></style>

@@ -18,12 +18,12 @@ export default {
       console.log("[Child] onMounted");
     });
     onBeforeUnmount(() => {
-      console.log("[Child] onBeforeUnmount");
-      console.log(document.querySelector("#input")); // 마운트를 해제하기 직전에 호출하므로 -> 아직 DOM을 가져올 수 있다!
+      // 마운트를 해제하기 직전에 호출하므로 -> 아직 DOM을 가져올 수 있다!
+      console.log("[Child] onBeforeUnmount:", document.querySelector("#input"));
     });
     onUnmounted(() => {
-      console.log("[Child] onUnmounted");
-      console.log(document.querySelector("#input")); // 마운트를 해제한 후이므로 -> null
+      // 마운트를 해제한 후이므로 -> null
+      console.log("[Child] onUnmounted:", document.querySelector("#input"));
     });
     return {};
   },

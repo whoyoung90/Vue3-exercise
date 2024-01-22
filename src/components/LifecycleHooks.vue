@@ -41,8 +41,8 @@ export default {
       );
     });
     onUpdated(() => {
-      // 반응 상태 변경으로 -> 컴포넌트가 "DOM 트리를 업데이트한 후에" 호출
-      console.log("onUpdated", message.value); // // 변경된 데이터
+      // 반응형 상태 변경으로 -> 컴포넌트가 "DOM 트리를 업데이트한 후에" 호출
+      console.log("onUpdated", message.value); // 변경된 데이터
       console.log(
         "DOM Content: ",
         document.querySelector("#message").textContent // DOM 트리를 업데이트한 이후므로 변경된 데이터
