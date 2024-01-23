@@ -14,7 +14,8 @@ module.exports = {
     "@vue/eslint-config-prettier",
   ],
   env: {
-    "vue/setup-compiler-macros": true, // 매크로 함수(defineProps, defineEmits, defineExpose)를 사용할 수 있게 해줌
+    // 매크로 함수 사용 가능 (defineProps, defineEmits, defineExpose)
+    "vue/setup-compiler-macros": true,
   },
   rules: {
     "no-console": "off",

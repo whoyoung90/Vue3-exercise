@@ -4,6 +4,7 @@
 
     <!-- input은 마운트가 완료될 때까지 null (마운트가 완료된 후에 참조값이 할당된다) -->
     <!-- Cannot read properties of null (reading 'value'): v-if="input"으로 해결 -->
+    <!-- <template> 안에서 $refs 내장 객체로 Refs 참조에 접근할 수도 있다 -->
     <p>{{ input }}</p>
     <p v-if="input">
       {{ input.value }}, {{ $refs.input.value }}, {{ $refs.input === input }}
@@ -41,7 +42,7 @@ export default {
       input.value.value = "Template Ref";
       console.log("onMounted: ", input.value); // ref: 렌더링이(마운트가) 된 이후에 접근할 수 있다!
 
-      // itemRefs.value.forEach(item => console.log('item: ', item.textContent));
+      // itemRefs.value.forEach((item) => console.log("item: ", item.textContent));
       itemRefs.value.forEach((item) => console.log("item: ", item));
 
       console.log("child.message: ", child.value.message);
@@ -49,8 +50,7 @@ export default {
     });
 
     const fruits = ref(["사과", "딸기", "포도"]);
-    // v-for에서 ref가 사용될 때, "마운트를 한 후에" 이 DOM 요소는 itemRefs 배열안에 채워진다!!
-    const itemRefs = ref([]);
+    const itemRefs = ref([]); // v-for내부에서 ref가 사용될 때 ref는 마운트 후 요소 배열로 채워진다!!
 
     const child = ref(null);
     return { input, fruits, itemRefs, child };

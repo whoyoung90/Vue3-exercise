@@ -34,9 +34,9 @@
 <script setup>
 import { ref } from "vue";
 import axios from "axios";
-import PostItem from "@/components/setup/PostItem.vue";
-import TemplateRefsChild from "./setup/TemplateRefsChild.vue";
-import MyButton from "./setup/MyButton.vue";
+import PostItem from "@/components/PostItem.vue";
+import TemplateRefsChild from "./TemplateRefsChild.vue";
+import MyButton from "./MyButton.vue";
 
 const msg = "Hello World!";
 const message = ref("");
@@ -44,10 +44,14 @@ const sayHello = () => {
   alert("Hello World!");
 };
 const child = ref(null);
+
+// script setup 사용시 기본적으로 Template Refs나 $parent와 같이 컴포넌트간 통신이 닫혀 있다
+// 자식에서 $parent로 사용하려면 defineExpose 필요
 defineExpose({
   msg,
 });
-// script setup에서는 async 선언없이 await을 Top Level에서 사용할 수 있다!
+
+// script setup내의 Top-level에서 async 선언없이도 await을 사용할 수 있다 => async setup()로 컴파일
 const response = await axios(
   "https://dummy.restapiexample.com/api/v1/employees"
 );
