@@ -1,4 +1,5 @@
 <template>
+  <h3 class="container py-4">Template Refs</h3>
   <div class="container py-4">
     <input ref="input" type="text" />
 
@@ -25,6 +26,7 @@
 
     <!-- ref 속성으로 자식 컴포넌트에 접근할 수 있다 -->
     <TemplateRefsChild ref="child"></TemplateRefsChild>
+    <hr class="my-4" />
   </div>
 </template>
 

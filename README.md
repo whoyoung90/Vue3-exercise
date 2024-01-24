@@ -1,35 +1,39 @@
-# learn-vue3
+# Vue3-exercise
 
-This template should help get you started developing with Vue 3 in Vite.
+## 🚩 개발 환경
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```bash
+"@popperjs/core": "^2.11.8",
+"axios": "^1.6.5",
+"bootstrap": "^5.3.2",
+"vue": "^3.4.7"
 ```
 
-### Compile and Hot-Reload for Development
+<br />
 
-```sh
-npm run dev
-```
+## 🚩 TodoList
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- Options API vs Composition API
+- Composition API
+- Setup 함수
+- 템플릿 문법
+- 반응형 기초 (Reactivity)
+- Computed
+- Class와 Style 바인딩
+- 조건부 렌더링 (v-if, v-show)
+- 목록 렌더링 (v-for)
+- 디렉티브
+- 이벤트 처리
+- 양방향 바인딩 (v-model)
+- Watch, WatchEffect
+- 컴포넌트
+- Single File Component
+- Props
+- Events
+- Non-Prop 속성 (fallthrough 속성)
+- Slots
+- Provide / Inject
+- Lifecycle Hooks
+- Template Refs
+- script setup 속성
+- 동적 컴포넌트
