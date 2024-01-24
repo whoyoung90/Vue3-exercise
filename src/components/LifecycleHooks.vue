@@ -1,11 +1,13 @@
 <template>
   <!-- 여기가 결국 DOM 트리다 -->
+  <h3 class="container py-4">Lifecycle Hooks</h3>
   <div class="container py-4">
     <input ref="inputRef" type="text" value="hello world!" />
     <hr />
     <button @click="visible = !visible">Toggle Child</button>
     <LifecycleChild v-if="visible"></LifecycleChild>
     <p id="message">{{ message }}</p>
+    <hr class="my-4" />
   </div>
 </template>
 

@@ -1,5 +1,6 @@
 <template>
-  <div class="container py-4">
+  <h3 class="container py-4">Dynamic PostItem</h3>
+  <div class="container py-1">
     <div class="row g-3">
       <div v-for="post in posts" :key="post.id" class="col col-4">
         <PostItem
@@ -12,10 +13,10 @@
       </div>
     </div>
 
-    <hr class="my-4" />
+    <hr />
     <CustomEmit @createPost="createPost"></CustomEmit>
 
-    <hr class="my-4" />
+    <hr />
     <!-- 동일 컴포넌트 v-model -->
     <!-- <label>
       이름
@@ -43,7 +44,7 @@
     ></CustomVmodelTitle>
 
     <!-- 다중 바인딩 -->
-    <hr class="my-4" />
+    <hr />
     <Username
       v-model:firstname="firstname"
       v-model:lastname="lastname"
@@ -96,6 +97,7 @@
 
     <!-- Provide Inject -->
     <ProvideInject></ProvideInject>
+    <hr class="my-4" />
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
-  <AppCard> 사과 </AppCard>
+  <SlotCard> 사과 </SlotCard>
 </template>
 
 <script setup>
-import AppCard from "./SlotCard.vue";
+import SlotCard from "./SlotCard.vue";
 </script>

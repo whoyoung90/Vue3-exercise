@@ -1,7 +1,7 @@
 <template>
-  <AppCard> 바나나 </AppCard>
+  <SlotCard> 바나나 </SlotCard>
 </template>
 
 <script setup>
-import AppCard from "./SlotCard.vue";
+import SlotCard from "./SlotCard.vue";
 </script>
